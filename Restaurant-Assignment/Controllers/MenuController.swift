@@ -9,15 +9,14 @@ import Foundation
 
 class MenuController {
     let baseURL = URL(string: "http://localhost:8090/")!
-    
+    let jsonDecoder = JSONDecoder()
     
     func fetchCategories(completion: @escaping ([String]?) -> Void) {
         
         let categoryURL = baseURL.appendingPathComponent("categories")
         let task = URLSession.shared.dataTask(with: categoryURL) { data, response, error in
             
-/*The categories endpoint will need to be decoded into a Categories object, and for that you'll need to create a JSONDecoder. Since data is an optional value, you'll you need to unwrap it before you can use the JSONDecoder to decode it. Once the data has been successfully decoded, call completion and pass in the categories property on the new Categories object. If any of these steps fail, call completion with nil. */
-            
+            /*The categories endpoint will need to be decoded into a Categories object, and for that you'll need to create a JSONDecoder. Since data is an optional value, you'll you need to unwrap it before you can use the JSONDecoder to decode it. Once the data has been successfully decoded, call completion and pass in the categories property on the new Categories object. If any of these steps fail, call completion with nil. */
             
             if let data = data,
                let jsonDictionary = try? JSONSerialization.jsonObject(with: data) as? [String:Any],
@@ -37,7 +36,14 @@ class MenuController {
         components.queryItems = [URLQueryItem(name: "category", value: categoryName)]
         let menuURL = components.url!
         let task = URLSession.shared.dataTask(with: menuURL) { data, response, error in
-            //code
+            
+            /*The data retrieved from /menu will be converted into an array of MenuItem objects. You'll first need to create a JSONDecoder for decoding the JSON data returned by the API */
+            if let data = data,
+               let menuItems = try? self.jsonDecoder.decode(MenuItems.self, from: data) {
+                completion(menuItems.items)
+            } else {
+                completion(nil)
+            }
         }
         task.resume()
     }
@@ -57,7 +63,13 @@ class MenuController {
         //The data for a POST must be stored within the body of the request. Once that's in place, can create the URLSessionDataTask”
         request.httpBody = jsonData
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            //code
+        /* the POST you make to /order will also return JSON data that can be decoded into intermediary model PreparationTime
+         By passing this value as the argument to completion, you can inform the user how long their order will take to prepare */
+            if let data = data, let preparationTime = try? self.jsonDecoder.decode(PreparationTime.self, from: data) {
+                completion(preparationTime.prepTime)
+            } else {
+                completion(nil)
+            }
         }
         task.resume()
     }
