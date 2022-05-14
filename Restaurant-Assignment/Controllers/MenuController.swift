@@ -8,7 +8,9 @@
 import Foundation
 
 class MenuController {
-    let baseURL = URL(string: "http://localhost:8090/")!
+    static let shared = MenuController()
+    
+    let baseURL = URL(string: "http://localhost:8080/")!
     let jsonDecoder = JSONDecoder()
     
     func fetchCategories(completion: @escaping ([String]?) -> Void) {
@@ -29,7 +31,7 @@ class MenuController {
         task.resume()
     }
     
-    func fetchMenuItems(forCategoty categoryName: String, completion: @escaping ([MenuItem]?) -> Void) {
+    func fetchMenuItems(forCategory categoryName: String, completion: @escaping ([MenuItem]?) -> Void) {
         
         let initialMenuURL = baseURL.appendingPathComponent("menu")
         var components = URLComponents(url: initialMenuURL, resolvingAgainstBaseURL: true)!
@@ -57,7 +59,7 @@ class MenuController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         //Store the array of menu IDs in JSON under the key menuIds”
-        let data: [String:[Int]] = ["menuIds": menuIds]
+        let data: [String: [Int]] = ["menuIds": menuIds]
         let jsonEncoder = JSONEncoder()
         let jsonData = try? jsonEncoder.encode(data)
         //The data for a POST must be stored within the body of the request. Once that's in place, can create the URLSessionDataTask”

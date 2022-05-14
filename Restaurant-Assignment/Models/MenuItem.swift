@@ -7,6 +7,9 @@
 
 import Foundation
 
+struct MenuItems: Codable {
+    let items: [MenuItem]
+}
 
 struct MenuItem: Codable {
     
@@ -14,7 +17,7 @@ struct MenuItem: Codable {
     var name: String
     var detailText: String
     var price: Double
-    var categoty: String
+    var category: String
     var imageURL: URL
     
     enum CodingKeys: String, CodingKey {
@@ -22,11 +25,9 @@ struct MenuItem: Codable {
         case name
         case detailText = "description"
         case price
-        case categoty
+        case category
         case imageURL = "image_url"
     }
 }
 
-struct MenuItems: Codable {
-    let items: [MenuItem]
-}
+

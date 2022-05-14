@@ -8,22 +8,34 @@
 import UIKit
 
 class MenuItemDetailVC: UIViewController {
-
+    
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var detailsTextLabel: UILabel!
+    @IBOutlet weak var addToOrderButton: UIButton!
+    
+    
+    var menuItem: MenuItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        updateUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUI() {
+        titleLabel.text = menuItem.name
+        priceLabel.text = String(format: "NZD %.2f", menuItem.price)
+        detailsTextLabel.text = menuItem.detailText
+        addToOrderButton.layer.cornerRadius = 5.0
     }
-    */
-
+    
+    @IBAction func addToOrderTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.4) {
+            self.addToOrderButton.transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
+            self.addToOrderButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+    }
 }
