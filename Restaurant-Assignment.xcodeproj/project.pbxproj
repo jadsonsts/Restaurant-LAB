@@ -13,6 +13,7 @@
 		DF070C35282919B900D36B1D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF070C34282919B900D36B1D /* Order.swift */; };
 		DF070C37282A62DB00D36B1D /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF070C36282A62DB00D36B1D /* MenuController.swift */; };
 		DF070C39282F725300D36B1D /* KeyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF070C38282F725300D36B1D /* KeyProperties.swift */; };
+		DF070C3B2830F8AA00D36B1D /* OrderConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF070C3A2830F8AA00D36B1D /* OrderConfirmationVC.swift */; };
 		DFF082F528290CEA00D5C8EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF082F428290CEA00D5C8EE /* AppDelegate.swift */; };
 		DFF082F728290CEA00D5C8EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF082F628290CEA00D5C8EE /* SceneDelegate.swift */; };
 		DFF082FC28290CEA00D5C8EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF082FA28290CEA00D5C8EE /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		DF070C34282919B900D36B1D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		DF070C36282A62DB00D36B1D /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		DF070C38282F725300D36B1D /* KeyProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyProperties.swift; sourceTree = "<group>"; };
+		DF070C3A2830F8AA00D36B1D /* OrderConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationVC.swift; sourceTree = "<group>"; };
 		DFF082F128290CEA00D5C8EE /* Restaurant-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Restaurant-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF082F428290CEA00D5C8EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFF082F628290CEA00D5C8EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				DFF0830B2829136C00D5C8EE /* MenuTableVC.swift */,
 				DF070C2D2829158400D36B1D /* MenuItemDetailVC.swift */,
 				DFF0830D2829138100D5C8EE /* OrderTableVC.swift */,
+				DF070C3A2830F8AA00D36B1D /* OrderConfirmationVC.swift */,
 				DF070C36282A62DB00D36B1D /* MenuController.swift */,
 			);
 			path = Controllers;
@@ -186,6 +189,7 @@
 				DF070C35282919B900D36B1D /* Order.swift in Sources */,
 				DFF082F728290CEA00D5C8EE /* SceneDelegate.swift in Sources */,
 				DF070C332829190E00D36B1D /* IntermediaryModels.swift in Sources */,
+				DF070C3B2830F8AA00D36B1D /* OrderConfirmationVC.swift in Sources */,
 				DF070C2E2829158400D36B1D /* MenuItemDetailVC.swift in Sources */,
 				DFF0830C2829136C00D5C8EE /* MenuTableVC.swift in Sources */,
 				DFF0830A2829133D00D5C8EE /* CategoryTableVC.swift in Sources */,

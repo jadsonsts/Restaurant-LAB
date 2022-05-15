@@ -10,6 +10,16 @@ import Foundation
 class MenuController {
     static let shared = MenuController()
     
+    //add a observer to the order for every time it changes.
+    var order = Order() {
+        didSet {
+            NotificationCenter.default.post(name: MenuController.orderUpdateNotification, object: nil)
+        }
+        
+    }
+    //creating a notification to use and eventually reload the order object into the OrderTableVC and show the new orders
+    static let orderUpdateNotification = Notification.Name("MenuController.orderUpdated")
+    
     let baseURL = URL(string: "http://localhost:8080/")!
     let jsonDecoder = JSONDecoder()
     
