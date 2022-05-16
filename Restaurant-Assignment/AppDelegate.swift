@@ -12,6 +12,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        //CREATING CACHE IMAGES TO LOAD EASLY
+        let tempraryDirectory = NSTemporaryDirectory()
+        let urlCache = URLCache(memoryCapacity: 25_000_000, diskCapacity: 50_000_000, diskPath: tempraryDirectory)
+        URLCache.shared = urlCache
         // Override point for customization after application launch.
         return true
     }

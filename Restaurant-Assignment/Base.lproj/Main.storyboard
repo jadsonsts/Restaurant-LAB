@@ -59,7 +59,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MenuCellIdentifier" textLabel="s7W-iV-bvR" detailTextLabel="R6W-pU-woA" style="IBUITableViewCellStyleValue1" id="Ux5-pr-zHR">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MenuCellIdentifier" textLabel="s7W-iV-bvR" detailTextLabel="R6W-pU-woA" imageView="Mpy-0G-lBs" style="IBUITableViewCellStyleValue1" id="Ux5-pr-zHR">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ux5-pr-zHR" id="hP9-5N-KrI">
@@ -67,7 +67,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s7W-iV-bvR">
-                                            <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                            <rect key="frame" x="78.5" y="15" width="25" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -80,6 +80,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Light" id="Mpy-0G-lBs">
+                                            <rect key="frame" x="20" y="0.0" width="43.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -156,6 +160,7 @@
                             <constraint firstItem="ocP-eA-Fg5" firstAttribute="trailing" secondItem="7gw-kd-WOk" secondAttribute="trailing" constant="20" id="kwR-Gf-iLP"/>
                             <constraint firstItem="adP-n5-9dF" firstAttribute="leading" secondItem="ocP-eA-Fg5" secondAttribute="leading" constant="20" id="lkB-un-vUQ"/>
                             <constraint firstItem="adP-n5-9dF" firstAttribute="top" secondItem="7gw-kd-WOk" secondAttribute="bottom" constant="5" id="mHk-Lg-Y3h"/>
+                            <constraint firstItem="dFc-rK-xOW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="adP-n5-9dF" secondAttribute="trailing" constant="8" symbolic="YES" id="mg5-p3-C3g"/>
                             <constraint firstItem="7gw-kd-WOk" firstAttribute="leading" secondItem="ocP-eA-Fg5" secondAttribute="leading" constant="20" id="nTD-XC-w07"/>
                             <constraint firstItem="dFc-rK-xOW" firstAttribute="top" secondItem="7gw-kd-WOk" secondAttribute="bottom" constant="5" id="uFa-ac-57V"/>
                             <constraint firstItem="al9-Cu-IzG" firstAttribute="leading" secondItem="ocP-eA-Fg5" secondAttribute="leading" constant="20" id="wXU-OP-bx4"/>
@@ -175,7 +180,7 @@
             </objects>
             <point key="canvasLocation" x="3285.507246376812" y="-139.28571428571428"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Your Order(s)-->
         <scene sceneID="eyG-PP-l0z">
             <objects>
                 <tableViewController id="fgg-KU-VBZ" customClass="OrderTableVC" customModule="Restaurant_Assignment" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCellIdentifier" textLabel="jZ1-Ct-RJH" detailTextLabel="bwY-Ep-jXO" style="IBUITableViewCellStyleValue1" id="Jhl-SL-7ky">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCellIdentifier" textLabel="jZ1-Ct-RJH" detailTextLabel="bwY-Ep-jXO" imageView="Q2E-R0-pMq" style="IBUITableViewCellStyleValue1" id="Jhl-SL-7ky">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jhl-SL-7ky" id="Oz2-fY-tOZ">
@@ -192,7 +197,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jZ1-Ct-RJH">
-                                            <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                            <rect key="frame" x="79" y="15" width="25" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -205,6 +210,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Light" id="Q2E-R0-pMq">
+                                            <rect key="frame" x="20" y="0.0" width="44" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -214,7 +223,7 @@
                             <outlet property="delegate" destination="fgg-KU-VBZ" id="Dcr-Dt-7F7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="nf4-tx-CsD">
+                    <navigationItem key="navigationItem" title="Your Order(s)" id="nf4-tx-CsD">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="Fir-Pl-Gje">
                             <connections>
                                 <action selector="submitTapped:" destination="fgg-KU-VBZ" id="lZJ-sE-rId"/>
@@ -335,6 +344,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Light" width="1024" height="1024"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">

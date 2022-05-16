@@ -18,11 +18,7 @@ class OrderConfirmationVC: UIViewController {
         timeRemaningLabel.text = "Thank you for your order! Your wait time is approximately \(minutes ?? 0) minutes"
     }
     
-    @IBAction func unwindToOrderList(segue: UIStoryboardSegue) {
-        if segue.identifier == K.unwindToOrder {
-            MenuController.shared.order.menuItems.removeAll()
-        }
-    }
+
     
     /*
     // MARK: - Navigation

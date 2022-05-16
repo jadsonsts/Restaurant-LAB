@@ -16,7 +16,7 @@ class OrderTableVC: UITableViewController {
         
         navigationItem.leftBarButtonItem = editButtonItem
         
-        NotificationCenter.default.addObserver(tableView, selector: #selector(UITableView.reloadData), name: MenuController.orderUpdateNotification, object: nil)
+        NotificationCenter.default.addObserver(tableView!, selector: #selector(UITableView.reloadData), name: MenuController.orderUpdateNotification, object: nil)
     }
     
     
@@ -45,6 +45,12 @@ class OrderTableVC: UITableViewController {
                     self.performSegue(withIdentifier: K.confirmationSegue, sender: nil)
                 }
             }
+        }
+    }
+    
+    @IBAction func unwindToOrderList(segue: UIStoryboardSegue) {
+        if segue.identifier == K.unwindToOrder {
+            MenuController.shared.order.menuItems.removeAll()
         }
     }
     
