@@ -82,9 +82,25 @@ class OrderTableVC: UITableViewController {
         let menuItem = MenuController.shared.order.menuItems[indexPath.row]
         cell.textLabel?.text = menuItem.name
         cell.detailTextLabel?.text = String(format: "NZD %.2f", menuItem.price)
+        
+        //checking if I have the image
+        MenuController.shared.fetchImage(url: menuItem.imageURL) { image in
+            guard let image = image else {return}
+        //checking the indexpath in order to put the right image, as the cell is reusable, it may put in the wrong place
+            DispatchQueue.main.async {
+                if let currentIndexPath = self.tableView.indexPath(for: cell), currentIndexPath != indexPath {
+                    return
+                }
+                cell.imageView?.image = image
+                cell.setNeedsLayout()
+            }
+        }
     }
     
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -30,6 +30,13 @@ class MenuItemDetailVC: UIViewController {
         priceLabel.text = String(format: "NZD %.2f", menuItem.price)
         detailsTextLabel.text = menuItem.detailText
         addToOrderButton.layer.cornerRadius = 5.0
+        
+        MenuController.shared.fetchImage(url: menuItem.imageURL) { image in
+            guard let image = image else {return}
+            DispatchQueue.main.async {
+                self.imageView.image = image
+            }
+        }
     }
     
     @IBAction func addToOrderTapped(_ sender: UIButton) {
